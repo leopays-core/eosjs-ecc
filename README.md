@@ -1,5 +1,5 @@
-[![NPM](https://img.shields.io/npm/v/eosjs-ecc.svg)](https://www.npmjs.org/package/eosjs-ecc)
-[![Build Status](https://travis-ci.org/EOSIO/eosjs-ecc.svg?branch=master)](https://travis-ci.org/EOSIO/eosjs-ecc)
+[![NPM](https://img.shields.io/npm/v/leopaysjs-ecc.svg)](https://www.npmjs.org/package/leopaysjs-ecc)
+[![Build Status](https://travis-ci.org/leopays-core/leopaysjs-ecc.svg?branch=master)](https://travis-ci.org/leopays-core/leopaysjs-ecc)
 
 # Elliptic curve cryptography functions (ECC)
 
@@ -8,32 +8,32 @@ Private Key, Public Key, Signature, AES, Encryption / Decryption
 # Import
 
 ```js
-import ecc from 'eosjs-ecc'
+import ecc from 'leopaysjs-ecc'
 // or
-const ecc = require('eosjs-ecc')
+const ecc = require('leopaysjs-ecc')
 ```
 
 # Include
 
--   Install with: `yarn add eosjs-ecc`
--   Html script tag, see [releases](https://github.com/EOSIO/eosjs-ecc/releases) for the correct **version** and its matching script **integrity** hash.
+-   Install with: `yarn add leopaysjs-ecc`
+-   Html script tag, see [releases](https://github.com/leopays-core/leopaysjs-ecc/releases) for the correct **version** and its matching script **integrity** hash.
 
 ```html
 <html>
 <head>
   <meta charset="utf-8">
   <!--
-  sha512-cL+IQQaQ586s9DrXfGtDheRpj5iDKh2M+xlpfwbhNjRIp4BGQ1fkM/vB4Ta8mc+f51YBW9sJiPcyMDIreJe6gQ== lib/eosjs-ecc.js
-  sha512-dYFDmK/d9r3/NCp6toLtfkwOjSMRBaEzaGAx1tfRItC0nsI0hVLERk05iNBQR7uDNI7ludYhcBI4vUiFHdjsTQ== lib/eosjs-ecc.min.js
-  sha512-eq1SCoSe38uR1UVuQMwR73VgY8qKTBDc87n2nIiC5WLhn1o2y1U6c5wY8lrigVX7INM8fM0PxDlMX5WvpghKig== lib/eosjs-ecc.min.js.map
+  sha512-cL+IQQaQ586s9DrXfGtDheRpj5iDKh2M+xlpfwbhNjRIp4BGQ1fkM/vB4Ta8mc+f51YBW9sJiPcyMDIreJe6gQ== lib/leopaysjs-ecc.js
+  sha512-dYFDmK/d9r3/NCp6toLtfkwOjSMRBaEzaGAx1tfRItC0nsI0hVLERk05iNBQR7uDNI7ludYhcBI4vUiFHdjsTQ== lib/leopaysjs-ecc.min.js
+  sha512-eq1SCoSe38uR1UVuQMwR73VgY8qKTBDc87n2nIiC5WLhn1o2y1U6c5wY8lrigVX7INM8fM0PxDlMX5WvpghKig== lib/leopaysjs-ecc.min.js.map
   -->
-  <script src="https://cdn.jsdelivr.net/npm/eosjs-ecc@4.0.4/lib/eosjs-ecc.min.js"
+  <script src="https://cdn.jsdelivr.net/npm/leopaysjs-ecc@4.0.4/lib/leopaysjs-ecc.min.js"
     integrity="sha512-dYFDmK/d9r3/NCp6toLtfkwOjSMRBaEzaGAx1tfRItC0nsI0hVLERk05iNBQR7uDNI7ludYhcBI4vUiFHdjsTQ=="
     crossorigin="anonymous"></script>
 
 </head>
 <body>
-  See console object: eosjs_ecc
+  See console object: leopaysjs_ecc
 </body>
 </html>
 ```
@@ -45,6 +45,7 @@ const ecc = require('eosjs-ecc')
 ### Table of Contents
 
 -   [wif](#wif)
+-   [pubkey](#pubkey)
 -   [ecc](#ecc)
     -   [initialize](#initialize)
     -   [unsafeRandomKey](#unsaferandomkey)
@@ -79,11 +80,16 @@ const ecc = require('eosjs-ecc')
     -   [sha256](#sha256)
         -   [Parameters](#parameters-10)
         -   [Examples](#examples-8)
--   [pubkey](#pubkey)
 
 ## wif
 
 [Wallet Import Format](https://en.bitcoin.it/wiki/Wallet_import_format)
+
+Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+## pubkey
+
+LPCKey..
 
 Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
 
@@ -118,7 +124,7 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 ```javascript
 ecc.randomKey().then(privateKey => {
 console.log('Private Key:\t', privateKey) // wif
-console.log('Public Key:\t', ecc.privateToPublic(privateKey)) // EOSkey...
+console.log('Public Key:\t', ecc.privateToPublic(privateKey)) // LPCKey...
 })
 ```
 
@@ -145,7 +151,7 @@ Returns **[wif](#wif)**
 #### Parameters
 
 -   `wif` **[wif](#wif)** 
--   `pubkey_prefix` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** public key prefix (optional, default `'EOS'`)
+-   `pubkey_prefix` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** public key prefix (optional, default `'LPC'`)
 
 #### Examples
 
@@ -159,8 +165,8 @@ Returns **[pubkey](#pubkey)**
 
 #### Parameters
 
--   `pubkey` **[pubkey](#pubkey)** like EOSKey..
--   `pubkey_prefix` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**  (optional, default `'EOS'`)
+-   `pubkey` **[pubkey](#pubkey)** like LPCKey..
+-   `pubkey_prefix` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**  (optional, default `'LPC'`)
 
 #### Examples
 
@@ -238,7 +244,7 @@ Recover the public key used to create the signature.
 
 #### Parameters
 
--   `signature` **([String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Buffer](https://nodejs.org/api/buffer.html))** (EOSbase58sig.., Hex, Buffer)
+-   `signature` **([String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Buffer](https://nodejs.org/api/buffer.html))** (LPCbase58sig.., Hex, Buffer)
 -   `data` **([String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Buffer](https://nodejs.org/api/buffer.html))** full data
 -   `encoding` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** data encoding (if data is a string) (optional, default `'utf8'`)
 
@@ -254,7 +260,7 @@ Returns **[pubkey](#pubkey)**
 
 #### Parameters
 
--   `signature` **([String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Buffer](https://nodejs.org/api/buffer.html))** (EOSbase58sig.., Hex, Buffer)
+-   `signature` **([String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Buffer](https://nodejs.org/api/buffer.html))** (LPCbase58sig.., Hex, Buffer)
 -   `dataSha256` **([String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Buffer](https://nodejs.org/api/buffer.html))** sha256 hash 32 byte buffer or hex string
 -   `encoding` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** dataSha256 encoding (if dataSha256 is a string) (optional, default `'hex'`)
 
@@ -280,16 +286,10 @@ ecc.sha256(Buffer.from('02208b', 'hex')) === '29a23..'
 
 Returns **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Buffer](https://nodejs.org/api/buffer.html))** Buffer when encoding is null, or string
 
-## pubkey
-
-EOSKey..
-
-Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
-
 # Usage (Object API)
 
 ```js
-let {PrivateKey, PublicKey, Signature, Aes, key_utils, config} = require('eosjs-ecc')
+let {PrivateKey, PublicKey, Signature, Aes, key_utils, config} = require('leopaysjs-ecc')
 
 // Create a new random private key
 let privateWif
@@ -309,20 +309,20 @@ pubkey = PrivateKey.fromString(privateWif).toPublic().toString()
 # Browser
 
 ```bash
-git clone https://github.com/EOSIO/eosjs-ecc.git
-cd eosjs-ecc
+git clone https://github.com/leopays-core/leopaysjs-ecc.git
+cd leopaysjs-ecc
 yarn
 yarn build_browser
-# builds: ./dist/eosjs-ecc.js
+# builds: ./dist/leopaysjs-ecc.js
 # Verify release hash
 ```
 
 ```html
-<script src=eosjs-ecc.js></script>
+<script src=leopaysjs-ecc.js></script>
 ```
 
 ```js
-var ecc = eosjs_ecc
+var ecc = leopaysjs_ecc
 
 ecc.randomKey().then(privateWif =>  {
   var pubkey = ecc.privateToPublic(privateWif)

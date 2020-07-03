@@ -1,6 +1,6 @@
 {
-  "name": "eosjs-ecc",
-  "version": "4.0.8",
+  "name": "leopaysjs-ecc",
+  "version": "0.1.0",
   "description": "Elliptic curve cryptography functions",
   "keywords": [
     "ECC",

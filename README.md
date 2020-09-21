@@ -45,7 +45,6 @@ const ecc = require('leopaysjs-ecc')
 ### Table of Contents
 
 -   [wif](#wif)
--   [pubkey](#pubkey)
 -   [ecc](#ecc)
     -   [initialize](#initialize)
     -   [unsafeRandomKey](#unsaferandomkey)
@@ -80,16 +79,11 @@ const ecc = require('leopaysjs-ecc')
     -   [sha256](#sha256)
         -   [Parameters](#parameters-10)
         -   [Examples](#examples-8)
+-   [pubkey](#pubkey)
 
 ## wif
 
 [Wallet Import Format](https://en.bitcoin.it/wiki/Wallet_import_format)
-
-Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
-
-## pubkey
-
-LPCKey..
 
 Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
 
@@ -124,7 +118,7 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 ```javascript
 ecc.randomKey().then(privateKey => {
 console.log('Private Key:\t', privateKey) // wif
-console.log('Public Key:\t', ecc.privateToPublic(privateKey)) // LPCKey...
+console.log('Public Key:\t', ecc.privateToPublic(privateKey)) // LPCkey...
 })
 ```
 
@@ -285,6 +279,12 @@ ecc.sha256(Buffer.from('02208b', 'hex')) === '29a23..'
 ```
 
 Returns **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Buffer](https://nodejs.org/api/buffer.html))** Buffer when encoding is null, or string
+
+## pubkey
+
+LPCKey..
+
+Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
 
 # Usage (Object API)
 

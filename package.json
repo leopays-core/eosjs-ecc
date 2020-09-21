@@ -2,21 +2,26 @@
   "name": "leopaysjs-ecc",
   "version": "0.1.0",
   "description": "Elliptic curve cryptography functions",
-  "keywords": [
-    "ECC",
-    "Private Key",
-    "Public Key",
-    "Signature",
-    "AES",
-    "Encryption",
-    "Decryption"
-  ],
-  "main": "lib/index.js",
+  "author": {
+    "name": "LeoPays",
+    "email": "developers@leopays.com",
+    "url": "https://leopays.com/"
+  },
+  "homepage": "https://github.com/leopays-core/leopaysjs-ecc#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leopays-core/leopaysjs-ecc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leopays-core/leopaysjs-ecc/issues",
+    "email": "developers@leopays.com"
+  },
   "files": [
     "README.md",
     "docs",
     "lib"
   ],
+  "main": "lib/index.js",
   "scripts": {
     "test": "mocha --use_strict src/*.test.js",
     "test_lib": "mocha --use_strict lib/*.test.js",
@@ -32,10 +37,6 @@
     "srisum": "npx srisum lib/leopaysjs-ecc.*",
     "prepublishOnly": "yarn build && yarn minimize && yarn test_lib && yarn docs"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/leopays-core/leopaysjs-ecc.git"
-  },
   "dependencies": {
     "@babel/runtime": "7.6.0",
     "bigi": "1.4.2",
@@ -47,7 +48,6 @@
     "ecurve": "1.0.5",
     "randombytes": "2.0.5"
   },
-  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
@@ -70,5 +70,14 @@
     "plugins": [
       "@babel/plugin-transform-runtime"
     ]
-  }
+  },
+  "keywords": [
+    "ECC",
+    "Private Key",
+    "Public Key",
+    "Signature",
+    "AES",
+    "Encryption",
+    "Decryption"
+  ]
 }

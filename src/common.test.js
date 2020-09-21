@@ -6,7 +6,7 @@ const ecc = require('.')
 const wif = '5KYZdUEo39z3FPrtuX2QbbwGnNP5zTd7yyr2SC1j299sBCnWjss'
 
 describe('Common API', () => {
-  it('unsafeRandomKey', async function() {
+  it('unsafeRandomKey', async function () {
     const pvt = await ecc.unsafeRandomKey()
     assert.equal(typeof pvt, 'string', 'pvt')
     assert(/^5[HJK]/.test(wif))
@@ -33,7 +33,7 @@ describe('Common API', () => {
       [true, 'PUB859gxfnXyUriMgUeThh1fWv3oqcpLFyHa3TfFYC4PK2HqhToVM', 'PUB'],
       [false, 'PUB859gxfnXyUriMgUeThh1fWv3oqcpLFyHa3TfFYC4PK2HqhToVm', 'PUB'],
     ]
-    for(const key of keys) {
+    for (const key of keys) {
       const [valid, pubkey, prefix] = key
       assert.equal(valid, ecc.isValidPublic(pubkey, prefix), pubkey)
     }
@@ -44,7 +44,7 @@ describe('Common API', () => {
       [true, '5KYZdUEo39z3FPrtuX2QbbwGnNP5zTd7yyr2SC1j299sBCnWjss'],
       [false, '5KYZdUEo39z3FPrtuX2QbbwGnNP5zTd7yyr2SC1j299sBCnWjsm'],
     ]
-    for(const key of keys) {
+    for (const key of keys) {
       assert.equal(key[0], ecc.isValidPrivate(key[1]), key[1])
     }
   })
@@ -54,7 +54,7 @@ describe('Common API', () => {
       // ['sha1', 'da39a3ee5e6b4b0d3255bfef95601890afd80709'],
       ['sha256', 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'],
     ]
-    for(const hash of hashes) {
+    for (const hash of hashes) {
       assert.equal(ecc[hash[0]](''), hash[1])
       assert.equal(ecc[hash[0]](Buffer.from('')), hash[1])
     }
@@ -72,7 +72,7 @@ describe('Common API', () => {
       ecc.signHash(dataSha256, pvt)
     ]
 
-    for(const sig of sigs) {
+    for (const sig of sigs) {
       assert(ecc.verify(sig, data, pubkey), 'verify data')
       assert(ecc.verifyHash(sig, dataSha256, pubkey), 'verify hash')
       assert.equal(pubkey, ecc.recover(sig, data), 'recover from data')

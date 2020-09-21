@@ -14,7 +14,7 @@ module.exports = func => (
       setTimeout(() => {
         try {
           resolve(func(...args))
-        } catch(err) {
+        } catch (err) {
           reject(err)
         }
       })

@@ -4,14 +4,14 @@ const assert = require('assert')
 
 const ecc = require('.')
 
-const {PublicKey, PrivateKey, Signature} = ecc
+const { PublicKey, PrivateKey, Signature } = ecc
 
 describe('Object API', () => {
   const pvt = PrivateKey('5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3')
   const pub = pvt.toPublic()
 
   describe('secp256k1 keys', () => {
-    it('randomKey', function() {
+    it('randomKey', function () {
       this.timeout(1100)
       return PrivateKey.randomKey()
     })

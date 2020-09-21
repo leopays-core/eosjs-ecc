@@ -47,11 +47,11 @@ function ECSignature(r, s) {
     return Buffer.concat([toDER(), hashTypeBuffer])
   }
 
-  return {r, s, toCompact, toDER, toScriptSignature}
+  return { r, s, toCompact, toDER, toScriptSignature }
 }
 
 // Import operations
-ECSignature.parseCompact = function(buffer) {
+ECSignature.parseCompact = function (buffer) {
   assert.equal(buffer.length, 65, 'Invalid signature length')
   var i = buffer.readUInt8(0) - 27
 
@@ -72,7 +72,7 @@ ECSignature.parseCompact = function(buffer) {
   }
 }
 
-ECSignature.fromDER = function(buffer) {
+ECSignature.fromDER = function (buffer) {
   assert.equal(buffer.readUInt8(0), 0x30, 'Not a DER sequence')
   assert.equal(buffer.readUInt8(1), buffer.length - 2, 'Invalid sequence length')
   assert.equal(buffer.readUInt8(2), 0x02, 'Expected a DER integer')
@@ -109,7 +109,7 @@ ECSignature.fromDER = function(buffer) {
 }
 
 // FIXME: 0x00, 0x04, 0x80 are SIGHASH_* boundary constants, importing Transaction causes a circular dependency
-ECSignature.parseScriptSignature = function(buffer) {
+ECSignature.parseScriptSignature = function (buffer) {
   var hashType = buffer.readUInt8(buffer.length - 1)
   var hashTypeMod = hashType & ~0x80
 

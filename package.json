@@ -7,9 +7,6 @@
     "email": "developers@leopays.com",
     "url": "https://leopays.com/"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "homepage": "https://github.com/leopays-core/leopaysjs-ecc#readme",
   "repository": {
     "type": "git",

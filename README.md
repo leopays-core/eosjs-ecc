@@ -8,14 +8,14 @@ Private Key, Public Key, Signature, AES, Encryption / Decryption
 # Import
 
 ```js
-import ecc from '@leopays/leopaysjs-ecc'
+import ecc from '@leopays-core/leopaysjs-ecc'
 // or
-const ecc = require('@leopays/leopaysjs-ecc')
+const ecc = require('@leopays-core/leopaysjs-ecc')
 ```
 
 # Include
 
--   Install with: `yarn add @leopays/leopaysjs-ecc`
+-   Install with: `yarn add @leopays-core/leopaysjs-ecc`
 -   Html script tag, see [releases](https://github.com/leopays-core/leopaysjs-ecc/releases) for the correct **version** and its matching script **integrity** hash.
 
 ```html
@@ -289,7 +289,7 @@ Returns **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 # Usage (Object API)
 
 ```js
-let {PrivateKey, PublicKey, Signature, Aes, key_utils, config} = require('@leopays/leopaysjs-ecc')
+let {PrivateKey, PublicKey, Signature, Aes, key_utils, config} = require('@leopays-core/leopaysjs-ecc')
 
 // Create a new random private key
 let privateWif

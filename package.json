@@ -1,5 +1,5 @@
 {
-  "name": "leopaysjs-ecc",
+  "name": "@leopays/leopaysjs-ecc",
   "version": "0.1.0",
   "description": "Elliptic curve cryptography functions",
   "author": {

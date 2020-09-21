@@ -1,0 +1,1 @@
+eosjs-ecc@v4.0.8 = leopaysjs-ecc@v0.1.0

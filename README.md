@@ -1,15 +1,9 @@
-[![NPM](https://img.shields.io/npm/v/leopaysjs-ecc.svg)](https://www.npmjs.org/package/leopaysjs-ecc)
+[![NPM](https://img.shields.io/npm/v/leopaysjs-ecc.svg)](https://www.npmjs.org/package/@leopays-core/leopaysjs-ecc)
 [![Build Status](https://travis-ci.org/leopays-core/leopaysjs-ecc.svg?branch=master)](https://travis-ci.org/leopays-core/leopaysjs-ecc)
 
 # Elliptic curve cryptography functions (ECC)
 
 Private Key, Public Key, Signature, AES, Encryption / Decryption
-
-# Install
-
-```bash
-yarn add https://github.com/leopays-core/leopaysjs-ecc.git#v0.1.1
-```
 
 # Import
 
